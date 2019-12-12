@@ -16,16 +16,8 @@ class CustomizedPersonalInformation extends Migration
     {
         Schema::create('customized_personal_informations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('dob');
-            $table->string('phone');
-            $table->string('address_line_1')->nullable();;
-            $table->string('address_line_2')->nullable();;
-            $table->string('signature')->nullable();;
-            $table->string('avatar')->nullable();;
-            $table->string('gender')->nullable();;
-            $table->string('skills')->nullable();;
+            $table->string('name')->nullable();
+            $table->json('pdf_form_content');
             $table->timestamps();
         });
     }

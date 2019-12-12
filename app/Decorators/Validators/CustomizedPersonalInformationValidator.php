@@ -9,16 +9,14 @@ class CustomizedPersonalInformationValidator extends BaseValidator implements Cu
 
     protected $rules = [
         'common' => [
-            'name'            => 'required|max:100',
-            'email'           => 'required|max:100|unique:customized_personal_informations',
-            'phone'           => 'required|max:100|unique:customized_personal_informations',
-            'dob'             => 'required|max:100',
+            //'name'                 => 'required|max:100',
+            'pdf_form_content'     => 'required'
         ],
         'create' => [
             
         ],
         'update' => [
-            //'id'  => 'required|exists:users,id',
+            //'id'  => 'required|exists:customized_personal_informations,id',
         ]
     ];
 

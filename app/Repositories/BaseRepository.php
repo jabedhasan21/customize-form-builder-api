@@ -61,4 +61,14 @@ abstract class BaseRepository implements RepositoryInterface {
         }
         return false;
     }
+
+    /**
+     * destroy an entry with it's ID
+     * @param $id int ID of the Entry
+     * @return mixed
+     */
+    public function destroy($id)
+    {
+        return $this->model->destroy($id);
+    }
 }

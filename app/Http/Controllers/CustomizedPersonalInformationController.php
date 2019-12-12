@@ -34,7 +34,7 @@ class CustomizedPersonalInformationController extends Controller
 	 */
 	public function store(Request $request)
 	{
-    
+		//dd($request->all());
 		return $this->model->create($request->all());
 	}
 
@@ -68,6 +68,6 @@ class CustomizedPersonalInformationController extends Controller
 	 */
 	public function destroy($id)
 	{
-		//$this->model->
+		$this->model->destroy($id);
 	}
 }

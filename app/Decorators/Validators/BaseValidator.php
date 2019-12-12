@@ -42,7 +42,7 @@ abstract class BaseValidator {
     {
         $rules = array_merge($this->rules['common'], $this->rules['create']);
         $validator = $this->validation->make($attributes, $rules);
-
+        
         if($validator->fails()) {
             //throw new ValidationException($validator);
            // throw new Exception($validator);
@@ -80,5 +80,15 @@ abstract class BaseValidator {
     public function byId($id)
     {
         return $this->model->byId($id);
+    }
+
+    /**
+     * destroy an entry with it's ID
+     * @param $id int ID of the Entry
+     * @return mixed
+     */
+    public function destroy($id)
+    {
+        return $this->model->destroy($id);
     }
 }

@@ -20,4 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/documents', 'CustomizedPersonalInformationController@store');
 Route::get('/documents', 'CustomizedPersonalInformationController@index');
 Route::get('/documents/{id}', 'CustomizedPersonalInformationController@show');
+Route::delete('/documents/{id}', 'CustomizedPersonalInformationController@destroy');
 Route::put('/documents/{id}', 'CustomizedPersonalInformationController@update');

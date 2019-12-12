@@ -32,12 +32,12 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $app = $this->app;
         $app->bind('App\Repositories\CustomizedPersonalInformation\CustomizedPersonalInformationRepository',function(){
-            $user =  new EloquentCustomizedPersonalInformationRepository(new CustomizedPersonalInformation());
+            $customizedPersonalInformation =  new EloquentCustomizedPersonalInformationRepository(new CustomizedPersonalInformation());
             //$cacheService = Cache::driver();
-            //$cache = new UserCache($cacheService,$user);
+            //$cache = new CustomizedPersonalInformationCache($cacheService,$customizedPersonalInformation);
             //$validator = App::make('validator');
-            //return new CustomizedPersonalInformationValidator($validator, $user);
-            return $user;
+            //return new CustomizedPersonalInformationValidator($validator, $customizedPersonalInformation);
+            return $customizedPersonalInformation;
         });
     }
 }

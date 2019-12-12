@@ -13,5 +13,9 @@ class CustomizedPersonalInformation extends Model
      */
     protected $table = 'customized_personal_informations';
 
-    protected $fillable = ['name', 'email', 'phone', 'dob'];
+    protected $fillable = ['name', 'pdf_form_content'];
+
+    protected $casts = [
+        'pdf_form_content' => 'array'
+    ];
 }
