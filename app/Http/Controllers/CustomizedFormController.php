@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 //use Illuminate\Support\Facades\Input;
-
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use App\Repositories\CustomizedForm\CustomizedFormRepository;
@@ -34,7 +34,15 @@ class CustomizedFormController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		//dd($request->all());
+		$validator = Validator::make($request->all(), [
+			'name'                 => 'required|max:500',
+            'pdf_form_content'     => 'required'
+		]);
+
+		if ($validator->fails()) {
+            return response($validator->errors());
+		}
+
 		return $this->model->create($request->all());
 	}
 
@@ -57,6 +65,16 @@ class CustomizedFormController extends Controller
 	 */
 	public function update($id, Request $request)
 	{
+		$validator = Validator::make($request->all(), [
+			'id'				   => 'required|integer',
+			'name'                 => 'required|max:500',
+            'pdf_form_content'     => 'required'
+		]);
+		
+		if ($validator->fails()) {
+            return response($validator->errors());
+		}
+
         $this->model->update($id,$request->all());
 	}
 

@@ -5,7 +5,7 @@ use Exception;
 use Illuminate\Contracts\Validation\ValidationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
-class ValidationExceptionHandler extends ExceptionHandler{
+class ValidationExceptionHandler extends ExceptionHandler {
     /**
      * A list of the exception types that should not be reported.
      *

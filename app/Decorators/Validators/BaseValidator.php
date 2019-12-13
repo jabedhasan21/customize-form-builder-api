@@ -4,7 +4,7 @@ namespace App\Decorators\Validators;
 
 use App\Repositories\RepositoryInterface;
 use Illuminate\Contracts\Validation\Factory as Validation;
-//use Illuminate\Contracts\Validation\ValidationException;
+use App\Exceptions\ValidationExceptionHandler;
 
 abstract class BaseValidator {
 
@@ -44,9 +44,8 @@ abstract class BaseValidator {
         $validator = $this->validation->make($attributes, $rules);
         
         if($validator->fails()) {
-            //throw new ValidationException($validator);
-           // throw new Exception($validator);
-           dd($validator->fails());
+            dd($validator->errors());
+            //throw new ValidationExceptionHandler($validator);
         }
         return $this->model->create($attributes);
     }

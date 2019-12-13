@@ -9,7 +9,7 @@ class CustomizedFormValidator extends BaseValidator implements CustomizedFormRep
 
     protected $rules = [
         'common' => [
-            //'name'                 => 'required|max:100',
+            'name'                 => 'required|max:500',
             'pdf_form_content'     => 'required'
         ],
         'create' => [

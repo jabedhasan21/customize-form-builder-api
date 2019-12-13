@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
 //use Illuminate\Contracts\Cache\Repository as Cache;
 use Illuminate\Support\Facades\Cache;
-
+use Illuminate\Contracts\Validation\Validator;
 class RepositoryServiceProvider extends ServiceProvider
 {
     /**
@@ -37,8 +37,9 @@ class RepositoryServiceProvider extends ServiceProvider
             $customizedForm =  new EloquentCustomizedFormRepository(new CustomizedForm());
             $cacheService = Cache::driver();
             $cache = new CustomizedFormCache($cacheService,$customizedForm);
-            //$validator = App::make('validator');
-            //return new customizedFormValidator($validator, $customizedForm);
+            $validator = App::make('validator');
+            //$validator = Validator::make();
+            //return new CustomizedFormValidator($validator, $cache);
             //return $customizedForm;
             return $cache;
         });
