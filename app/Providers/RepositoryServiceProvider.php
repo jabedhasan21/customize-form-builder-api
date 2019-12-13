@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use App\Decorators\Cache\CustomizedPersonalInformationCache;
-use App\Decorators\Validators\CustomizedPersonalInformationValidator;
-use App\Models\CustomizedPersonalInformation;
-use App\Repositories\CustomizedPersonalInformation\EloquentCustomizedPersonalInformationRepository;
+use App\Decorators\Cache\CustomizedFormCache;
+use App\Decorators\Validators\CustomizedFormValidator;
+use App\Models\CustomizedForm;
+use App\Repositories\CustomizedForm\EloquentCustomizedFormRepository;
 
 use Illuminate\Support\Facades\App;
 
@@ -33,13 +33,13 @@ class RepositoryServiceProvider extends ServiceProvider
     public function boot()
     {
         $app = $this->app;
-        $app->bind('App\Repositories\CustomizedPersonalInformation\CustomizedPersonalInformationRepository',function(){
-            $customizedPersonalInformation =  new EloquentCustomizedPersonalInformationRepository(new CustomizedPersonalInformation());
+        $app->bind('App\Repositories\CustomizedForm\CustomizedFormRepository',function(){
+            $customizedForm =  new EloquentCustomizedFormRepository(new CustomizedForm());
             $cacheService = Cache::driver();
-            $cache = new CustomizedPersonalInformationCache($cacheService,$customizedPersonalInformation);
+            $cache = new CustomizedFormCache($cacheService,$customizedForm);
             //$validator = App::make('validator');
-            //return new CustomizedPersonalInformationValidator($validator, $customizedPersonalInformation);
-            //return $customizedPersonalInformation;
+            //return new customizedFormValidator($validator, $customizedForm);
+            //return $customizedForm;
             return $cache;
         });
     }

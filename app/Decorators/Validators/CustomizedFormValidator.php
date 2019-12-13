@@ -2,10 +2,10 @@
 
 namespace App\Decorators\Validators;
 
-use App\Repositories\CustomizedPersonalInformation\CustomizedPersonalInformationRepository;
+use App\Repositories\CustomizedForm\CustomizedFormRepository;
 use Illuminate\Contracts\Validation\Factory as Validation;
 
-class CustomizedPersonalInformationValidator extends BaseValidator implements CustomizedPersonalInformationRepository{
+class CustomizedFormValidator extends BaseValidator implements CustomizedFormRepository{
 
     protected $rules = [
         'common' => [
@@ -16,11 +16,11 @@ class CustomizedPersonalInformationValidator extends BaseValidator implements Cu
             
         ],
         'update' => [
-            //'id'  => 'required|exists:customized_personal_informations,id',
+            //'id'  => 'required|exists:customized_forms,id',
         ]
     ];
 
-    function __construct(Validation $validation, CustomizedPersonalInformationRepository $model)
+    function __construct(Validation $validation, CustomizedFormRepository $model)
     {
         parent::__construct($validation,$model);
     }

@@ -6,13 +6,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
-use App\Repositories\CustomizedPersonalInformation\CustomizedPersonalInformationRepository;
+use App\Repositories\CustomizedForm\CustomizedFormRepository;
 
-class CustomizedPersonalInformationController extends Controller
+class CustomizedFormController extends Controller
 {
     protected $model;
 
-    function __construct(CustomizedPersonalInformationRepository $model)
+    function __construct(CustomizedFormRepository $model)
     {
         $this->model  =$model;
     }

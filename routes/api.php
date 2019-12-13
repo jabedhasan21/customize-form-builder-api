@@ -17,8 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/documents', 'CustomizedPersonalInformationController@store');
-Route::get('/documents', 'CustomizedPersonalInformationController@index');
-Route::get('/documents/{id}', 'CustomizedPersonalInformationController@show');
-Route::delete('/documents/{id}', 'CustomizedPersonalInformationController@destroy');
-Route::put('/documents/{id}', 'CustomizedPersonalInformationController@update');
+Route::post('/documents', 'CustomizedFormController@store');
+Route::get('/documents', 'CustomizedFormController@index');
+Route::get('/documents/{id}', 'CustomizedFormController@show');
+Route::delete('/documents/{id}', 'CustomizedFormController@destroy');
+Route::put('/documents/{id}', 'CustomizedFormController@update');

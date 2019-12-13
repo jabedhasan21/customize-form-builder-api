@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 
-class CustomizedPersonalInformation extends Migration
+class CustomizedForm extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CustomizedPersonalInformation extends Migration
      */
     public function up()
     {
-        Schema::create('customized_personal_informations', function (Blueprint $table) {
+        Schema::create('customized_forms', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->nullable();
             $table->json('pdf_form_content');
@@ -29,6 +29,6 @@ class CustomizedPersonalInformation extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customized_personal_informations');
+        Schema::dropIfExists('customized_forms');
     }
 }
