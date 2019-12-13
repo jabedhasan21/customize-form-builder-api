@@ -10,7 +10,7 @@ class CustomizedPersonalInformationCache extends  BaseCache implements Customize
 
     protected $baseCacheKey = 'CustomizedPersonalInformations';
 
-    function __construct(Cache $cache, CommentRepository $model)
+    function __construct(Cache $cache, CustomizedPersonalInformationRepository $model)
     {
         parent::__construct($cache,$model);
     }
