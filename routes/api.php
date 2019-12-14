@@ -13,12 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
-Route::post('/documents', 'CustomizedFormController@store');
-Route::get('/documents', 'CustomizedFormController@index');
-Route::get('/documents/{id}', 'CustomizedFormController@show');
-Route::delete('/documents/{id}', 'CustomizedFormController@destroy');
-Route::put('/documents/{id}', 'CustomizedFormController@update');
+Route::get('/forms', 'CustomizedFormController@index');
+Route::post('/forms', 'CustomizedFormController@store');
+Route::get('/forms/{id}', 'CustomizedFormController@show');
+Route::put('/forms/{id}', 'CustomizedFormController@update');
+Route::delete('/forms/{id}', 'CustomizedFormController@destroy');
